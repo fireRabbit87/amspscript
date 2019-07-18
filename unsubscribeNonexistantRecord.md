@@ -20,7 +20,7 @@ ENDIF
 The code will add the record to the all subscribers and the variable `@update_sub_status` will always be "Created Subscriber." for a new record. Based on this, you can then use the next set of lines to unsubscribe the newly added record into all subscribers.
 
 ```html
-SET @lue = CreateObject("ExecuteRequest")
+SET @lue = CREATEOBJECT("ExecuteRequest")
 SETOBJECTPROPERTY(@lue,"Name", "LogUnsubEvent")
 
 SET @lue_prop = CREATEOBJECT("APIProperty")
