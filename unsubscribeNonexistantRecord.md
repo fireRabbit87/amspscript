@@ -4,6 +4,7 @@ Sometimes, you run into a problem where the subscriber you sent an email to does
 
 **NOTE:** Make sure you have a custom unsubcribe page before you implementing this code.
 
+### Part 1 : Create the Record in All Subscribers
 ```html
 SET @ts_sub = CREATEOBJECT("Subscriber")
 SETOBJECTPROPERTY(@ts_sub,"SubscriberKey", @subkey)
@@ -18,7 +19,7 @@ ELSE
 ENDIF
 ```
 The code will add the record to the all subscribers and the variable `@update_sub_status` will always be "Created Subscriber." for a new record. Based on this, you can then use the next set of lines to unsubscribe the newly added record into all subscribers.
-
+### Part 2 : Unsubscribe the Record in All Subscribers
 ```html
 SET @lue = CREATEOBJECT("ExecuteRequest")
 SETOBJECTPROPERTY(@lue,"Name", "LogUnsubEvent")
