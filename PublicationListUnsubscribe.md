@@ -2,8 +2,7 @@
 
 If there is only one BU for a client, but different companies, then it's best to use a publication list to segment out the data. Here's how to unsubscribe a customer/record using the publication list method.
 
-First step is to find the customer within the the publication list.
-
+### Part 1 : Retrieve the Customer from the Publication List
 ```html
 /*LOOP THROUGH PUBLICATION LIST*/
 SET @clientID = CREATEOBJECT("ClientID")
@@ -34,7 +33,7 @@ SETOBJECTPROPERTY(@rr, "Filter", @cfp)
 SET @ListSubObj = INVOKERETRIEVE(@rr, @rrStatus, @rrRequestID)
 ```
 The `@listSubObj` should tell if you the customer exists (they should!) within your publication list. After this, it's just a simple if statement.
-
+### Part 2 : Update the Status
 ```html
 IF ROWCOUNT(@ListSubObj) > 0 THEN
 
