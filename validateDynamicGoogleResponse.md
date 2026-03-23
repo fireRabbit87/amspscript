@@ -24,7 +24,6 @@ $(document).ready(function() {
       success: function() {
         // you can remove this line if you like, it's not necessary, more for testing purposes
         console.log("YOUR FORM SUBMITTED CORRECTLY");
-        
       }
     })
   });
